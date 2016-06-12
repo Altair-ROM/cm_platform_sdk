@@ -880,7 +880,8 @@ public final class CMSettings {
         /**
          * Display style of the status bar battery information
          * 0: Display the battery an icon in portrait mode
-         * 2: Display the battery as a circle
+         * 2: Display the battery as a solid circle
+         * 3: Display the battery as a dotted circle
          * 4: Hide the battery status information
          * 5: Display the battery an icon in landscape mode
          * 6: Display the battery as plain text
@@ -890,7 +891,7 @@ public final class CMSettings {
 
         /** @hide */
         public static final Validator STATUS_BAR_BATTERY_STYLE_VALIDATOR =
-                new DiscreteValueValidator(new String[] {"0", "2", "4", "5", "6"});
+                new DiscreteValueValidator(new String[] {"0", "2", "3", "4", "5", "6"});
 
         /**
          * Status bar battery %
@@ -1837,6 +1838,128 @@ public final class CMSettings {
         public static final Validator __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR =
                 sAlwaysTrueValidator;
 
+        /*** Third party System settings ***/
+
+        /**
+         * Whether to show seconds field in clock
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_SHOW_SECONDS = "status_bar_clock_show_seconds";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_SHOW_SECONDS_VALIDATOR =
+                sBooleanValidator;
+
+        /**
+         * Font used for clock text
+         * 0: bold
+         * 1: condensed
+         * 2: light
+         * 3: light italic
+         * 4: normal
+         * default: 4
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_FONT_STYLE = "status_bar_clock_font_style";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_FONT_STYLE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 4);
+
+        /**
+         * Whether to show the date next to the clock
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_DATE_DISPLAY = "status_bar_clock_date_display";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_DATE_DISPLAY_VALIDATOR =
+                sBooleanValidator;
+
+        /**
+         * Style of date shown next to clock (normal/lowercase/uppercase)
+         * 0: regular
+         * 1: lowercase
+         * 2: uppercase
+         * default: 0
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_DATE_STYLE = "status_bar_clock_date_style";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_DATE_STYLE_VALIDATOR =
+                new InclusiveIntegerRangeValidator(0, 2);
+
+        /**
+         * Format of date shown next to clock
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_DATE_FORMAT = "status_bar_clock_date_format";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_DATE_FORMAT_VALIDATOR =
+                sAlwaysTrueValidator;
+        
+        /**
+         * Whether default or custom clock color is used
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_USE_CUSTOM_COLOR = "status_bar_clock_use_custom_color";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_USE_CUSTOM_COLOR_VALIDATOR =
+                sBooleanValidator;
+
+        /**
+         * Setting for custom clock color
+         * @hide
+         */
+        public static final String STATUS_BAR_CLOCK_CUSTOM_COLOR = "status_bar_clock_custom_color";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_CLOCK_CUSTOM_COLOR_VALIDATOR =
+                sColorValidator;
+
+        /**
+         * Whether default or custom battery colors are used
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_USE_CUSTOM_COLORS = "status_bar_battery_use_custom_colors";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_BATTERY_USE_CUSTOM_COLORS_VALIDATOR =
+                sBooleanValidator;
+
+        /**
+         * Setting for custom battery charge color
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_CUSTOM_COLOR_CHARGE = "status_bar_battery_custom_color_charge";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_BATTERY_CUSTOM_COLOR_CHARGE_VALIDATOR =
+                sColorValidator;
+
+        /**
+         * Setting for custom battery bolt color
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_CUSTOM_COLOR_BOLT = "status_bar_battery_custom_color_bolt";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_BATTERY_CUSTOM_COLOR_BOLT_VALIDATOR =
+                sColorValidator;
+
+        /**
+         * Setting for custom battery text color
+         * @hide
+         */
+        public static final String STATUS_BAR_BATTERY_CUSTOM_COLOR_TEXT = "status_bar_battery_custom_color_text";
+
+        /** @hide */
+        public static final Validator STATUS_BAR_BATTERY_CUSTOM_COLOR_TEXT_VALIDATOR =
+                sColorValidator;
+
         /**
          * @hide
          */
@@ -2089,6 +2212,18 @@ public final class CMSettings {
                     TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK_VALIDATOR);
             VALIDATORS.put(__MAGICAL_TEST_PASSING_ENABLER,
                     __MAGICAL_TEST_PASSING_ENABLER_VALIDATOR);
+            /*** Third party System settings validators ***/
+            VALIDATORS.put(STATUS_BAR_CLOCK_SHOW_SECONDS, STATUS_BAR_CLOCK_SHOW_SECONDS_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_FONT_STYLE, STATUS_BAR_CLOCK_FONT_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_DATE_DISPLAY, STATUS_BAR_CLOCK_DATE_DISPLAY_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_DATE_STYLE, STATUS_BAR_CLOCK_DATE_STYLE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_DATE_FORMAT, STATUS_BAR_CLOCK_DATE_FORMAT_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_USE_CUSTOM_COLOR, STATUS_BAR_CLOCK_USE_CUSTOM_COLOR_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_CLOCK_CUSTOM_COLOR, STATUS_BAR_CLOCK_CUSTOM_COLOR_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BATTERY_USE_CUSTOM_COLORS, STATUS_BAR_BATTERY_USE_CUSTOM_COLORS_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BATTERY_CUSTOM_COLOR_CHARGE, STATUS_BAR_BATTERY_CUSTOM_COLOR_CHARGE_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BATTERY_CUSTOM_COLOR_BOLT, STATUS_BAR_BATTERY_CUSTOM_COLOR_BOLT_VALIDATOR);
+            VALIDATORS.put(STATUS_BAR_BATTERY_CUSTOM_COLOR_TEXT, STATUS_BAR_BATTERY_CUSTOM_COLOR_TEXT_VALIDATOR);
         };
         // endregion
     }
@@ -2803,6 +2938,7 @@ public final class CMSettings {
          */
         public static final String LOCK_SCREEN_WEATHER_ENABLED = "lock_screen_weather_enabled";
 
+        /*** Third party Secure settings ***/
 
         // endregion
 
@@ -3351,7 +3487,10 @@ public final class CMSettings {
          * @hide
          */
         public static final String DEV_FORCE_SHOW_NAVBAR = "dev_force_show_navbar";
-        // endregion
+ 
+        /*** Third party Global settings ***/
+
+       // endregion
 
         /**
          * I can haz more bukkits
