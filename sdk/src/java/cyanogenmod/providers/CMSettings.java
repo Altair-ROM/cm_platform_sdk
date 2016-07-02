@@ -1868,13 +1868,16 @@ public final class CMSettings {
 
         /**
          * Whether to show the date next to the clock
+         * 0: disabled
+         * 1: small font size
+         * 2: normal font size
          * @hide
          */
         public static final String STATUS_BAR_CLOCK_DATE_DISPLAY = "status_bar_clock_date_display";
 
         /** @hide */
         public static final Validator STATUS_BAR_CLOCK_DATE_DISPLAY_VALIDATOR =
-                sBooleanValidator;
+                new InclusiveIntegerRangeValidator(0, 2);
 
         /**
          * Style of date shown next to clock (normal/lowercase/uppercase)
