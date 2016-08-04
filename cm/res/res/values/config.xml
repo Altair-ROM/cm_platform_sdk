@@ -53,8 +53,8 @@
 
     <!-- Default values for LiveDisplay -->
     <integer name="config_dayColorTemperature">6500</integer>
-    <integer name="config_nightColorTemperature">4500</integer>
-    <integer name="config_outdoorAmbientLux">9000</integer>
+    <integer name="config_nightColorTemperature">4800</integer>
+    <integer name="config_outdoorAmbientLux">12000</integer>
     <integer name="config_defaultLiveDisplayMode">0</integer>
 
     <!-- These values should map to the true min and max
@@ -107,8 +107,8 @@
         <item>org.cyanogenmod.platform.internal.CMHardwareService</item>
         <item>org.cyanogenmod.platform.internal.AppSuggestManagerService</item>
         <item>org.cyanogenmod.platform.internal.PerformanceManagerService</item>
-        <item>org.cyanogenmod.platform.internal.ThemeManagerService</item>
-        <item>org.cyanogenmod.platform.internal.IconCacheManagerService</item>
+        <item>org.cyanogenmod.platform.internal.ThemeManagerServiceBroker</item>
+        <item>org.cyanogenmod.platform.internal.IconCacheManagerServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.LiveLockScreenServiceBroker</item>
         <item>org.cyanogenmod.platform.internal.CMWeatherManagerService</item>
         <item>org.cyanogenmod.platform.internal.display.LiveDisplayService</item>
