@@ -56,6 +56,7 @@ public class QSConstants {
     public static final String TILE_DND = "dnd";
     public static final String TILE_NAVBAR = "navbar";
     public static final String TILE_RESTART_SYSTEMUI = "restart_systemui";
+    public static final String TILE_HALO = "halo";
 
     public static final String DYNAMIC_TILE_NEXT_ALARM = "next_alarm";
     public static final String DYNAMIC_TILE_IME_SELECTOR = "ime_selector";
@@ -104,6 +105,7 @@ public class QSConstants {
         STATIC_TILES_AVAILABLE.add(TILE_CAFFEINE);
         STATIC_TILES_AVAILABLE.add(TILE_NAVBAR);
         STATIC_TILES_AVAILABLE.add(TILE_RESTART_SYSTEMUI);
+        STATIC_TILES_AVAILABLE.add(TILE_HALO);
 
         TILES_AVAILABLE.addAll(STATIC_TILES_AVAILABLE);
 
