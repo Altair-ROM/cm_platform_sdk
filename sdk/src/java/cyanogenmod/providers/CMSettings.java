@@ -880,7 +880,7 @@ public final class CMSettings {
          * 0: Normal display (Eclair stock)
          * 1: Small display (Froyo stock)
          * 2: No display (Gingerbread/ICS stock)
-         * default: 2
+         * default: 1
          */
         public static final String STATUS_BAR_AM_PM = "status_bar_am_pm";
 
@@ -908,6 +908,7 @@ public final class CMSettings {
          * 0: Hide the battery percentage
          * 1: Display the battery percentage inside the icon
          * 2: Display the battery percentage next to the icon
+         * default: 2
          */
         public static final String STATUS_BAR_SHOW_BATTERY_PERCENT =
                 "status_bar_show_battery_percent";
